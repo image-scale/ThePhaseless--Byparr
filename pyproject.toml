@@ -1,0 +1,23 @@
+[project]
+name = "byparr"
+version = "0.1.0"
+description = "API for bypassing Cloudflare challenges and returning cookies"
+requires-python = ">=3.11"
+dependencies = [
+    "camoufox[geoip]>=0.4",
+    "fastapi[standard]>=0.135",
+    "playwright-captcha>=0.1",
+    "pydantic>=2",
+]
+
+[dependency-groups]
+test = [
+    "httpx>=0.28",
+    "pytest>=9.0",
+    "pytest-asyncio>=1.3",
+    "pytest-retry>=1.7",
+]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
